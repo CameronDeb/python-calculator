@@ -1,7 +1,6 @@
 # advanced_calculator.py
-import math # Import the math module for advanced functions
+import math
 
-# --- Basic Arithmetic Functions ---
 def add(x, y):
   """This function adds two numbers"""
   return x + y
@@ -22,7 +21,7 @@ def divide(x, y):
   else:
     return x / y
 
-# --- Advanced Mathematical Functions ---
+#Advanced Functions
 def power(x, y):
   """This function raises x to the power of y"""
   return x ** y
@@ -50,14 +49,12 @@ def tangent(x):
       return "Error! Tangent is undefined for this angle."
   return math.tan(x)
 
-# --- Main Calculator Logic ---
 if __name__ == "__main__":
   print("---------------------------")
   print(" Advanced Python Calculator")
   print("---------------------------")
 
   while True:
-    # Display operation choices
     print("\nSelect operation:")
     print("1. Add")
     print("2. Subtract")
@@ -69,34 +66,33 @@ if __name__ == "__main__":
     print("8. Cosine (cos(x)) - x in radians")
     print("9. Tangent (tan(x)) - x in radians")
     print("Enter 'quit' to exit.")
-
-    # Take input for the operation choice
+    
     choice = input("Enter choice (1/2/3/4/5/6/7/8/9/quit): ")
 
     if choice.lower() == 'quit':
         print("Exiting calculator.")
-        break # Exit the while loop
+        break
 
-    # Check if choice requires one number or two
+
     if choice in ('1', '2', '3', '4', '5'):
         try:
             num1 = float(input("Enter first number (x): "))
             num2 = float(input("Enter second number (y): "))
         except ValueError:
             print("Invalid input. Please enter numbers.")
-            continue # Go back to the start of the loop
+            continue
     elif choice in ('6', '7', '8', '9'):
         try:
             num1 = float(input("Enter the number (x): "))
         except ValueError:
             print("Invalid input. Please enter a number.")
-            continue # Go back to the start of the loop
+            continue
     else:
         print("Invalid Input for operation choice.")
-        continue # Go back to the start of the loop
+        continue
 
-    # Perform the calculation based on the choice
-    result = None # Initialize result
+
+    result = None
     if choice == '1':
         result = add(num1, num2)
         print(f"Result: {num1} + {num2} = {result}")
